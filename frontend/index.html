@@ -908,7 +908,7 @@
     }
 
     // Send to backend
-    fetch('http://localhost:5000/api/contact', {
+    fetch('https://white-matter-production.up.railway.app/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, phone, service, message })
