@@ -11,63 +11,33 @@
     body { font-family: 'Outfit', sans-serif; background: #ffffff; color: #0f1f3d; overflow-x: hidden; }
 
     /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: grid; grid-template-columns: auto 1fr auto;
-      align-items: center; padding: 0 48px; height: 68px;
-      background: #ffffff; border-bottom: 1px solid rgba(0,0,0,0.07);
-    }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: grid; grid-template-columns: auto 1fr auto; align-items: center; padding: 0 48px; height: 68px; background: #ffffff; border-bottom: 1px solid rgba(0,0,0,0.07); }
     .nav-logo { display: flex; align-items: center; text-decoration: none; }
     .nav-logo img { height: 44px; width: auto; object-fit: contain; }
     .nav-links { display: flex; align-items: center; justify-content: center; gap: 40px; list-style: none; }
-    .nav-links a { text-decoration: none; color: #4a5568; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding-bottom: 4px; border-bottom: 2px solid transparent; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: #1d4ed8; border-bottom: 2px solid #1d4ed8; }
-    .nav-cta { padding: 11px 26px; background: #1d4ed8; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; text-decoration: none; border: none; border-radius: 2px; transition: background 0.2s; white-space: nowrap; }
+    .nav-links a { text-decoration: none; color: #4a5568; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding-bottom: 4px; border-bottom: 2px solid transparent; transition: color 0.2s; cursor: pointer; }
+    .nav-links a:hover { color: #1d4ed8; border-bottom: 2px solid #1d4ed8; }
+    .nav-cta { padding: 11px 26px; background: #1d4ed8; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; text-decoration: none; border: none; border-radius: 2px; transition: background 0.2s; }
     .nav-cta:hover { background: #1e40af; }
-    
-    @media (max-width: 1024px) {
-      nav { padding: 0 32px; }
-      .nav-links { gap: 24px; font-size: 12px; }
-    }
-    @media (max-width: 768px) {
-      nav { grid-template-columns: 1fr auto; padding: 0 20px; }
-      .nav-links { display: none; }
-    }
+    @media (max-width: 768px) { nav { grid-template-columns: 1fr auto; padding: 0 20px; } .nav-links { display: none; } }
 
     /* HERO */
-    .hero {
-      min-height: 100vh; background: #0a1628; display: flex; align-items: center;
-      padding: 120px 64px 80px; margin-top: 68px; position: relative;
-    }
+    .hero { min-height: 100vh; background: #0a1628; display: flex; align-items: center; padding: 120px 64px 80px; margin-top: 68px; position: relative; }
     .hero-content { max-width: 600px; z-index: 10; }
     .hero-eyebrow { color: #60a5fa; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 24px; }
     .hero h1 { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: #ffffff; line-height: 1.2; margin-bottom: 20px; }
     .hero h1 em { color: #60a5fa; font-style: normal; }
     .hero-sub { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 48px; }
     .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-    .btn-primary { padding: 13px 32px; background: #1d4ed8; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; text-decoration: none; border: none; border-radius: 2px; transition: background 0.2s; }
+    .btn-primary { padding: 13px 32px; background: #1d4ed8; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; text-decoration: none; border: none; border-radius: 2px; transition: background 0.2s; display: inline-block; }
     .btn-primary:hover { background: #1e40af; }
-    .btn-ghost { padding: 13px 32px; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; text-decoration: none; border-radius: 2px; transition: all 0.2s; }
+    .btn-ghost { padding: 13px 32px; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; text-decoration: none; border-radius: 2px; transition: all 0.2s; display: inline-block; }
     .btn-ghost:hover { border-color: #60a5fa; color: #60a5fa; }
     .hero-visual { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 620px; height: 620px; opacity: 0.75; }
-
-    @media (max-width: 1024px) {
-      .hero { padding: 100px 40px 60px; }
-      .hero h1 { font-size: 40px; }
-      .hero-visual { width: 400px; height: 400px; }
-    }
-    @media (max-width: 768px) {
-      .hero { padding: 80px 24px 60px; min-height: 70vh; }
-      .hero-content { max-width: 100%; }
-      .hero h1 { font-size: 32px; margin-bottom: 16px; }
-      .hero-sub { font-size: 14px; margin-bottom: 32px; }
-      .hero-actions { gap: 12px; }
-      .btn-primary, .btn-ghost { padding: 11px 20px; font-size: 11px; }
-      .hero-visual { width: 250px; height: 250px; right: -100px; opacity: 0.3; }
-    }
+    @media (max-width: 768px) { .hero { padding: 80px 24px 60px; min-height: 70vh; margin-top: 68px; } .hero h1 { font-size: 32px; } .hero-visual { width: 250px; height: 250px; right: -100px; opacity: 0.3; } }
 
     /* SERVICES */
-    .services { background: #0a1628; padding: 80px 64px; }
+    .services { background: #0a1628; padding: 120px 64px 80px; margin-top: 0; }
     .services .section-label { color: #60a5fa; }
     .services .section-title { color: #ffffff; }
     .services .section-desc { color: rgba(255,255,255,0.5); }
@@ -75,7 +45,7 @@
     .section-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: #0f1f3d; margin-bottom: 16px; }
     .section-desc { font-size: 15px; color: #5a6a80; line-height: 1.8; max-width: 500px; }
     .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
-    .service-card { padding: 36px 28px; border-radius: 6px; position: relative; overflow: hidden; transition: transform 0.25s; cursor: default; border: 1px solid rgba(255,255,255,0.06); }
+    .service-card { padding: 36px 28px; border-radius: 6px; position: relative; overflow: hidden; transition: transform 0.25s; cursor: pointer; border: 1px solid rgba(255,255,255,0.06); background: #1a3a6e; text-decoration: none; display: flex; flex-direction: column; color: #ffffff; }
     .service-card:hover { transform: translateY(-5px); }
     .s-icon { width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #ffffff; margin-bottom: 22px; font-size: 22px; }
     .service-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; color: #ffffff; margin-bottom: 10px; line-height: 1.3; }
@@ -84,114 +54,56 @@
     .s-tags span { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); border-radius: 2px; }
     .s-link { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.85); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25); padding-bottom: 2px; transition: all 0.2s; }
     .s-link:hover { color: #ffffff; border-color: #ffffff; }
-    
-    @media (max-width: 1024px) { 
-      .services { padding: 60px 40px; }
-      .services-grid { grid-template-columns: repeat(2,1fr); } 
-    }
-    @media (max-width: 768px) { 
-      .services { padding: 50px 24px; } 
-      .section-title { font-size: 28px; }
-      .services-grid { grid-template-columns: 1fr; gap: 12px; } 
-      .service-card { padding: 24px 20px; }
-      .service-title { font-size: 16px; }
-      .service-desc { font-size: 13px; }
-    }
+    @media (max-width: 768px) { .services { padding: 60px 24px; } .services-grid { grid-template-columns: 1fr; } }
 
     /* PORTFOLIO */
     .portfolio-section { background: #ffffff; padding: 80px 64px; }
     .portfolio-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; flex-wrap: wrap; gap: 24px; }
     .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .portfolio-card { position: relative; height: 280px; border-radius: 6px; overflow: hidden; cursor: pointer; transition: all 0.3s; }
-    .portfolio-card.portfolio-large { grid-column: span 2; height: 360px; }
-    .portfolio-bg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
-    .portfolio-content { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.5) 40%, transparent 100%); padding: 32px; display: flex; flex-direction: column; justify-content: flex-end; z-index: 2; }
+    .portfolio-card { position: relative; height: 280px; border-radius: 6px; overflow: hidden; cursor: pointer; transition: all 0.3s; background: #0a1628; text-decoration: none; display: flex; align-items: flex-end; }
+    .portfolio-content { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.5) 40%, transparent 100%); padding: 32px; display: flex; flex-direction: column; justify-content: flex-end; z-index: 2; width: 100%; }
     .portfolio-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #60a5fa; display: block; margin-bottom: 12px; }
     .portfolio-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; color: #ffffff; margin-bottom: 10px; line-height: 1.3; }
-    .portfolio-card.portfolio-large h3 { font-size: 28px; }
     .portfolio-card p { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 16px; }
     .portfolio-card a { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #60a5fa; text-decoration: none; display: inline-block; cursor: pointer; }
     .portfolio-emoji { position: absolute; top: 20px; right: 20px; font-size: 40px; opacity: 0.2; z-index: 1; }
     .portfolio-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
-    
-    @media (max-width: 1024px) {
-      .portfolio-section { padding: 60px 40px; }
-      .portfolio-grid { grid-template-columns: 1fr; }
-      .portfolio-card.portfolio-large { grid-column: span 1; }
-    }
-    @media (max-width: 768px) { 
-      .portfolio-grid { grid-template-columns: 1fr; }
-      .portfolio-section { padding: 50px 24px; }
-      .portfolio-card { height: 200px; }
-      .portfolio-card.portfolio-large { height: 200px; }
-      .portfolio-card h3 { font-size: 18px; }
-      .portfolio-card.portfolio-large h3 { font-size: 18px; }
-      .portfolio-emoji { font-size: 28px; top: 12px; right: 12px; }
-    }
+    @media (max-width: 768px) { .portfolio-grid { grid-template-columns: 1fr; } .portfolio-section { padding: 60px 24px; } .portfolio-card { height: 200px; } }
 
     /* BLOG */
     .blog-section { background: #ffffff; padding: 80px 64px; }
     .blog-header { margin-bottom: 48px; }
-    .blog-grid { display: grid; grid-template-columns: 1.6fr 1fr; grid-template-rows: auto auto; gap: 24px; margin-top: 48px; }
-    .blog-card { border-radius: 4px; overflow: hidden; border: 1px solid rgba(29,78,216,0.1); transition: transform 0.3s, box-shadow 0.3s; background: #ffffff; cursor: pointer; }
+    .blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px; }
+    .blog-card { border-radius: 4px; overflow: hidden; border: 1px solid rgba(29,78,216,0.1); transition: transform 0.3s, box-shadow 0.3s; background: #0a1628; cursor: pointer; text-decoration: none; display: flex; flex-direction: column; color: #ffffff; }
     .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(29,78,216,0.12); }
-    .blog-featured { grid-row: span 2; }
-    .blog-image { height: 220px; position: relative; display: flex; align-items: flex-end; padding: 20px; }
-    .blog-featured .blog-image { height: 280px; }
-    .blog-image.small { height: 130px; }
+    .blog-image { height: 220px; position: relative; display: flex; align-items: flex-end; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
     .blog-cat-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; background: rgba(255,255,255,0.15); color: #ffffff; padding: 5px 12px; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); }
     .blog-body { padding: 24px 28px; }
-    .blog-featured .blog-body { padding: 28px 32px; }
     .blog-meta { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
     .blog-date { font-size: 12px; color: #9aabbd; font-weight: 400; }
     .blog-read-time { font-size: 12px; color: #9aabbd; }
-    .blog-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; color: #0f1f3d; line-height: 1.4; margin-bottom: 12px; }
-    .blog-featured .blog-title { font-size: 22px; margin-bottom: 14px; }
-    .blog-excerpt { font-size: 13.5px; color: #5a6a80; line-height: 1.7; font-weight: 300; margin-bottom: 20px; }
-    .blog-read-btn { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #1d4ed8; text-decoration: none; border-bottom: 1px solid rgba(29,78,216,0.25); padding-bottom: 2px; transition: all 0.2s; cursor: pointer; }
+    .blog-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; color: #ffffff; line-height: 1.4; margin-bottom: 12px; }
+    .blog-excerpt { font-size: 13.5px; color: rgba(255,255,255,0.6); line-height: 1.7; font-weight: 300; margin-bottom: 20px; }
+    .blog-read-btn { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #60a5fa; text-decoration: none; border-bottom: 1px solid rgba(96,165,250,0.25); padding-bottom: 2px; transition: all 0.2s; cursor: pointer; }
     .blog-read-btn:hover { letter-spacing: 0.18em; }
-    
-    @media (max-width: 1024px) { 
-      .blog-section { padding: 60px 40px; }
-      .blog-grid { grid-template-columns: 1fr; } 
-      .blog-featured { grid-row: span 1; } 
-    }
-    @media (max-width: 768px) { 
-      .blog-section { padding: 50px 24px; }
-      .blog-grid { grid-template-columns: 1fr; }
-      .blog-featured { grid-row: span 1; }
-      .blog-card { margin-bottom: 16px; }
-      .blog-image { height: 180px; }
-      .blog-featured .blog-image { height: 180px; }
-    }
+    @media (max-width: 768px) { .blog-grid { grid-template-columns: 1fr; } .blog-section { padding: 60px 24px; } }
 
     /* PROCESS */
-    .process-section { background: #ffffff; padding: 60px 64px; }
+    .process-section { background: #ffffff; padding: 80px 64px; }
     .process-steps { display: flex; flex-direction: column; gap: 0; margin-top: 32px; border: 1px solid rgba(29,78,216,0.1); }
-    .process-step { display: flex; align-items: flex-start; gap: 24px; padding: 28px 32px; border-bottom: 1px solid rgba(29,78,216,0.08); transition: background 0.2s; }
+    .process-step { display: flex; align-items: flex-start; gap: 24px; padding: 28px 32px; border-bottom: 1px solid rgba(29,78,216,0.08); transition: background 0.2s; cursor: pointer; }
     .process-step:last-child { border-bottom: none; }
     .process-step:hover { background: #f8faff; }
-    .step-dot { width: 44px; height: 44px; border: 1px solid rgba(29,78,216,0.2); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 600; color: #1d4ed8; background: #ffffff; flex-shrink: 0; margin-bottom: 0; transition: all 0.2s; }
+    .step-dot { width: 44px; height: 44px; border: 1px solid rgba(29,78,216,0.2); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 600; color: #1d4ed8; background: #ffffff; flex-shrink: 0; transition: all 0.2s; }
     .process-step:hover .step-dot { background: #1d4ed8; color: #ffffff; border-color: #1d4ed8; }
     .step-content { flex: 1; }
     .step-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: #0f1f3d; margin-bottom: 4px; }
     .step-desc { font-size: 13.5px; color: #5a6a80; line-height: 1.6; font-weight: 300; }
-    
-    @media (max-width: 1024px) {
-      .process-section { padding: 50px 40px; }
-    }
-    @media (max-width: 768px) { 
-      .process-section { padding: 50px 24px; }
-      .process-step { gap: 16px; padding: 20px 16px; }
-      .step-dot { width: 36px; height: 36px; font-size: 12px; }
-      .step-title { font-size: 14px; }
-      .step-desc { font-size: 13px; }
-    }
+    @media (max-width: 768px) { .process-section { padding: 60px 24px; } .process-step { gap: 16px; padding: 20px 16px; } }
 
-    /* CTA CONTACT FORM */
+    /* CTA */
     .cta-section { background: #0a1628; padding: 100px 64px; position: relative; overflow: hidden; }
     .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(29,78,216,0.15) 0%, transparent 65%); }
-    .cta-section .section-label { color: #60a5fa; }
     .cta-section .section-title { color: #ffffff !important; }
     .cta-section .section-desc { color: rgba(255,255,255,0.55) !important; }
     .contact-form { max-width: 680px; margin: 0 auto; text-align: left; position: relative; z-index: 1; }
@@ -208,19 +120,7 @@
     .form-message { margin-top: 16px; padding: 12px; border-radius: 4px; text-align: center; font-size: 14px; display: none; }
     .form-message.success { background: rgba(16,185,129,0.2); color: #10b981; display: block; }
     .form-message.error { background: rgba(239,68,68,0.2); color: #ef4444; display: block; }
-    
-    @media (max-width: 1024px) {
-      .cta-section { padding: 80px 40px; }
-      .contact-form { max-width: 100%; }
-    }
-    @media (max-width: 768px) { 
-      .cta-section { padding: 60px 24px; }
-      .form-row { grid-template-columns: 1fr; gap: 12px; }
-      .form-group { margin-bottom: 12px; }
-      .form-group input, .form-group select, .form-group textarea { padding: 12px 14px; font-size: 14px; }
-      .form-group textarea { height: 100px; }
-      .form-submit { padding: 14px; font-size: 12px; }
-    }
+    @media (max-width: 768px) { .cta-section { padding: 60px 24px; } .form-row { grid-template-columns: 1fr; } }
 
     /* FOOTER */
     footer { background: #0f1f3d; padding: 60px 64px; }
@@ -228,87 +128,35 @@
     .footer-brand img { height: 40px; width: auto; filter: brightness(0) invert(1); }
     .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 12px; }
     footer h5 { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #60a5fa; margin-bottom: 20px; }
-    footer a { font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; display: block; margin-bottom: 12px; transition: color 0.2s; }
+    footer a { font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; display: block; margin-bottom: 12px; transition: color 0.2s; cursor: pointer; }
     footer a:hover { color: #60a5fa; }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; text-align: center; font-size: 12px; color: rgba(255,255,255,0.35); }
-
-    @media (max-width: 1024px) {
-      footer { padding: 50px 40px; }
-      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
-    }
-    @media (max-width: 768px) {
-      footer { padding: 40px 24px; }
-      .footer-top { grid-template-columns: 1fr; gap: 24px; }
-      footer h5 { margin-bottom: 16px; }
-      footer a { margin-bottom: 10px; font-size: 12px; }
-    }
-
-    /* MODALS */
-    .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 200; align-items: center; justify-content: center; overflow-y: auto; padding: 20px; }
-    .modal.open { display: flex; }
-    .modal-content { background: #ffffff; border-radius: 8px; width: 100%; max-width: 800px; max-height: 85vh; overflow-y: auto; padding: 40px; position: relative; animation: slideUp 0.3s ease; }
-    @keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    .modal-close { position: absolute; top: 20px; right: 20px; width: 32px; height: 32px; background: transparent; border: 1px solid rgba(15,31,61,0.1); color: #0f1f3d; font-size: 24px; cursor: pointer; border-radius: 4px; transition: all 0.2s; }
-    .modal-close:hover { background: #f4f7ff; border-color: #1d4ed8; }
-    .modal-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; color: #0f1f3d; margin-bottom: 32px; }
-    .project-detail-image { width: 100%; height: 300px; border-radius: 6px; background: linear-gradient(135deg, #1d4ed8 0%, #0ea5e9 100%); margin-bottom: 32px; }
-    .project-detail-content { font-size: 15px; color: #5a6a80; line-height: 1.8; }
-    .project-detail-content h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: #0f1f3d; margin-top: 24px; margin-bottom: 12px; }
-    .project-detail-content p { margin-bottom: 16px; }
-    .project-details-list { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
-    .detail-item { padding: 16px; background: #f8faff; border-radius: 4px; }
-    .detail-item h4 { font-size: 13px; font-weight: 700; color: #1d4ed8; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
-    .detail-item p { font-size: 13px; color: #5a6a80; margin: 0; }
-
-    .blog-detail-content { font-size: 15px; color: #5a6a80; line-height: 1.9; }
-    .blog-detail-content h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: #0f1f3d; margin: 32px 0 16px; }
-    .blog-detail-content h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: #0f1f3d; margin: 24px 0 12px; }
-    .blog-detail-content p { margin-bottom: 16px; }
-    .blog-detail-content strong { color: #0f1f3d; font-weight: 500; }
-
-    @media (max-width: 768px) {
-      .modal-content { padding: 24px; }
-      .modal-title { font-size: 24px; margin-bottom: 20px; }
-      .project-detail-image { height: 200px; margin-bottom: 20px; }
-      .project-details-list { grid-template-columns: 1fr; gap: 16px; }
-      .blog-detail-content h2 { font-size: 22px; margin: 20px 0 12px; }
-      .blog-detail-content h3 { font-size: 18px; margin: 16px 0 8px; }
-    }
-
-    .modal-list { display: flex; flex-direction: column; }
-    .modal-item { padding: 20px; border-bottom: 1px solid rgba(29,78,216,0.1); transition: background 0.2s; }
-    .modal-item:last-child { border-bottom: none; }
-    .modal-item:hover { background: #f8faff; }
-    .modal-item h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: #0f1f3d; margin-bottom: 6px; }
-    .modal-item p { font-size: 13px; color: #5a6a80; margin: 0; }
-    .modal-item-date { font-size: 11px; color: #1d4ed8; font-weight: 600; margin-bottom: 8px; }
+    @media (max-width: 768px) { footer { padding: 40px 24px; } .footer-top { grid-template-columns: 1fr; gap: 24px; } }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwwUAxMTAxMTAxMTAxMTAxMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMT/2wBDAQICAgMDAwYDAwYMCAcIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwT/wAARCABoAGgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWm5ydn5KTlJWWm5yeoqOkpaanqKmqsrO0tba2uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWm5ydn5KTlJWWm5yeoqOkpaanqKmqsrO0tba2uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//Z" alt="White Matter" />
+    <img src="logo.jpg" alt="White Matter" />
   </a>
   <ul class="nav-links">
-    <li><a href="#" onclick="scrollToSection('services')">Services</a></li>
-    <li><a href="#" onclick="scrollToSection('portfolio')">Portfolio</a></li>
-    <li><a href="#" onclick="scrollToSection('blog')">Blog</a></li>
-    <li><a href="#" onclick="scrollToSection('process')">Process</a></li>
+    <li><a onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Services</a></li>
+    <li><a onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">Portfolio</a></li>
+    <li><a onclick="document.getElementById('blog').scrollIntoView({behavior:'smooth'})">Blog</a></li>
+    <li><a onclick="document.getElementById('process').scrollIntoView({behavior:'smooth'})">Process</a></li>
   </ul>
-  <a href="#" onclick="scrollToSection('contact')" class="nav-cta">Get In Touch</a>
+  <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="nav-cta">Get In Touch</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-eyebrow">Welcome to White Matter</div>
     <h1>Building Digital Ideas<br><em>That Matter.</em></h1>
     <p class="hero-sub">We build websites, mobile apps, web applications, and custom software for businesses and brands — clean, fast, and built to last.</p>
     <div class="hero-actions">
-      <a href="#" onclick="scrollToSection('services')" class="btn-primary">Our Services</a>
-      <a href="#" onclick="scrollToSection('portfolio')" class="btn-ghost">View Portfolio</a>
+      <a onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="btn-primary">Our Services</a>
+      <a onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})" class="btn-ghost">View Portfolio</a>
     </div>
   </div>
   <svg class="hero-visual" viewBox="0 0 580 580" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -319,44 +167,38 @@
   </svg>
 </section>
 
-<!-- SERVICES -->
 <section class="services" id="services">
   <div class="section-label">What We Do</div>
   <h2 class="section-title">Our Services</h2>
-  <p class="section-desc">We build websites, mobile apps, web applications, and custom software. Here's what we can do for you.</p>
+  <p class="section-desc">We build websites, mobile apps, web applications, and custom software.</p>
   <div class="services-grid">
-    <div class="service-card" style="background:#1a3a6e;">
+    <div class="service-card">
       <div class="s-icon">⟨/⟩</div>
       <h3 class="service-title">Web Development</h3>
       <p class="service-desc">Modern, responsive websites built with the latest technologies. Fast, secure, and optimized for conversions.</p>
       <div class="s-tags"><span>React</span><span>Node.js</span><span>Next.js</span></div>
-      <a href="#" class="s-link">Learn More →</a>
     </div>
-    <div class="service-card" style="background:#111827;">
+    <div class="service-card">
       <div class="s-icon">✨</div>
       <h3 class="service-title">UI/UX Design</h3>
       <p class="service-desc">Beautiful, user-centered designs that look great and work even better. Every pixel matters.</p>
       <div class="s-tags"><span>Figma</span><span>Design Systems</span></div>
-      <a href="#" class="s-link">Learn More →</a>
     </div>
-    <div class="service-card" style="background:#0c4a6e;">
+    <div class="service-card">
       <div class="s-icon">📱</div>
       <h3 class="service-title">Mobile Apps</h3>
       <p class="service-desc">Native and cross-platform mobile applications that your users will love. iOS and Android.</p>
-      <div class="s-tags"><span>Flutter</span><span>React Native</span><span>Swift</span></div>
-      <a href="#" class="s-link">Learn More →</a>
+      <div class="s-tags"><span>Flutter</span><span>React Native</span></div>
     </div>
-    <div class="service-card" style="background:#1e3a5f;">
+    <div class="service-card">
       <div class="s-icon">⚙️</div>
       <h3 class="service-title">Custom Software</h3>
       <p class="service-desc">Tailored solutions built to solve your specific business challenges. Scalable and maintainable.</p>
-      <div class="s-tags"><span>Backend</span><span>APIs</span><span>Integration</span></div>
-      <a href="#" class="s-link">Learn More →</a>
+      <div class="s-tags"><span>Backend</span><span>APIs</span></div>
     </div>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
 <section class="portfolio-section" id="portfolio">
   <div class="portfolio-header">
     <div>
@@ -365,46 +207,45 @@
     </div>
   </div>
   <div class="portfolio-grid">
-    <div class="portfolio-card portfolio-large" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);" onclick="openProjectModal('radai')">
+    <div class="portfolio-card">
       <div class="portfolio-emoji">🤖</div>
       <div class="portfolio-content">
-        <span class="portfolio-tag">AI & Machine Learning</span>
-        <h3>RadAI - Medical Imaging Platform</h3>
+        <span class="portfolio-tag">AI & MACHINE LEARNING</span>
+        <h3>RadAI - Medical Imaging</h3>
         <p>Advanced AI platform for medical image analysis and diagnostics.</p>
-        <a href="#" class="portfolio-card a">View Case Study →</a>
+        <a class="portfolio-card a">View Case Study →</a>
       </div>
     </div>
-    <div class="portfolio-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);" onclick="openProjectModal('ellys')">
+    <div class="portfolio-card">
       <div class="portfolio-emoji">🍰</div>
       <div class="portfolio-content">
-        <span class="portfolio-tag">E-Commerce</span>
+        <span class="portfolio-tag">E-COMMERCE</span>
         <h3>Ellys Bakery</h3>
         <p>Beautiful e-commerce platform for artisan bakery.</p>
-        <a href="#" class="portfolio-card a">View Case Study →</a>
+        <a class="portfolio-card a">View Case Study →</a>
       </div>
     </div>
-    <div class="portfolio-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);" onclick="openProjectModal('whitematter')">
+    <div class="portfolio-card">
       <div class="portfolio-emoji">💼</div>
       <div class="portfolio-content">
-        <span class="portfolio-tag">Agency</span>
+        <span class="portfolio-tag">AGENCY</span>
         <h3>White Matter Site</h3>
         <p>Our own digital agency website and portfolio.</p>
-        <a href="#" class="portfolio-card a">View Case Study →</a>
+        <a class="portfolio-card a">View Case Study →</a>
       </div>
     </div>
-    <div class="portfolio-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);" onclick="openProjectModal('banking')">
+    <div class="portfolio-card">
       <div class="portfolio-emoji">🏦</div>
       <div class="portfolio-content">
-        <span class="portfolio-tag">FinTech</span>
+        <span class="portfolio-tag">FINTECH</span>
         <h3>Banking App</h3>
         <p>Secure mobile banking application with real-time transactions.</p>
-        <a href="#" class="portfolio-card a">View Case Study →</a>
+        <a class="portfolio-card a">View Case Study →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BLOG -->
 <section class="blog-section" id="blog">
   <div class="blog-header">
     <div>
@@ -413,7 +254,7 @@
     </div>
   </div>
   <div class="blog-grid">
-    <div class="blog-card blog-featured" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);" onclick="openBlogModal(1)">
+    <div class="blog-card">
       <div class="blog-image">
         <span class="blog-cat-badge">AI & MACHINE LEARNING</span>
       </div>
@@ -423,12 +264,12 @@
           <span class="blog-read-time">8 min read</span>
         </div>
         <h3 class="blog-title">The Future of AI in Web Development</h3>
-        <p class="blog-excerpt">Exploring how artificial intelligence is transforming the way we build and design web applications, from automated testing to intelligent code generation.</p>
-        <a href="#" class="blog-read-btn">READ →</a>
+        <p class="blog-excerpt">Exploring how artificial intelligence is transforming the way we build web applications.</p>
+        <a class="blog-read-btn">READ →</a>
       </div>
     </div>
-    <div class="blog-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);" onclick="openBlogModal(2)">
-      <div class="blog-image small">
+    <div class="blog-card">
+      <div class="blog-image">
         <span class="blog-cat-badge">MOBILE DEVELOPMENT</span>
       </div>
       <div class="blog-body">
@@ -438,11 +279,11 @@
         </div>
         <h3 class="blog-title">Flutter vs React Native in 2025</h3>
         <p class="blog-excerpt">A detailed comparison of two leading cross-platform mobile development frameworks.</p>
-        <a href="#" class="blog-read-btn">READ →</a>
+        <a class="blog-read-btn">READ →</a>
       </div>
     </div>
-    <div class="blog-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);" onclick="openBlogModal(3)">
-      <div class="blog-image small">
+    <div class="blog-card">
+      <div class="blog-image">
         <span class="blog-cat-badge">WEB DEVELOPMENT</span>
       </div>
       <div class="blog-body">
@@ -452,11 +293,11 @@
         </div>
         <h3 class="blog-title">Django REST + Docker</h3>
         <p class="blog-excerpt">Best practices for containerizing Django applications and deploying them at scale.</p>
-        <a href="#" class="blog-read-btn">READ →</a>
+        <a class="blog-read-btn">READ →</a>
       </div>
     </div>
-    <div class="blog-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);" onclick="openBlogModal(4)">
-      <div class="blog-image small">
+    <div class="blog-card">
+      <div class="blog-image">
         <span class="blog-cat-badge">TECH TIPS</span>
       </div>
       <div class="blog-body">
@@ -466,13 +307,12 @@
         </div>
         <h3 class="blog-title">5 Things Every Student Should Build</h3>
         <p class="blog-excerpt">Portfolio projects that will help you land your first development job.</p>
-        <a href="#" class="blog-read-btn">READ →</a>
+        <a class="blog-read-btn">READ →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
 <section class="process-section" id="process">
   <div class="section-label">How We Work</div>
   <h2 class="section-title">Our Process</h2>
@@ -515,7 +355,6 @@
   </div>
 </section>
 
-<!-- CONTACT FORM -->
 <section class="cta-section" id="contact">
   <div class="section-label">Get In Touch</div>
   <h2 class="section-title">Tell Us A Bit More</h2>
@@ -544,7 +383,6 @@
           <option value="Mobile App">Mobile App</option>
           <option value="UI/UX Design">UI/UX Design</option>
           <option value="Custom Software">Custom Software</option>
-          <option value="Other">Other</option>
         </select>
       </div>
     </div>
@@ -557,26 +395,23 @@
   </form>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwwUAxMTAxMTAxMTAxMTAxMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMT/2wBDAQICAgMDAwYDAwYMCAcIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwT/wAARCABoAGgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWm5ydn5KTlJWWm5yeoqOkpaanqKmqsrO0tba2uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWm5ydn5KTlJWWm5yeoqOkpaanqKmqsrO0tba2uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//Z" alt="White Matter" />
+      <img src="logo.jpg" alt="White Matter" />
       <p>Building digital ideas that matter. We create websites, apps, and custom software for businesses that want to make an impact.</p>
     </div>
     <div>
       <h5>Services</h5>
-      <a href="#services">Web Development</a>
-      <a href="#services">Mobile Apps</a>
-      <a href="#services">UI/UX Design</a>
-      <a href="#services">Custom Software</a>
+      <a onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Web Development</a>
+      <a onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Mobile Apps</a>
+      <a onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">UI/UX Design</a>
     </div>
     <div>
       <h5>Company</h5>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#blog">Blog</a>
-      <a href="#process">Process</a>
-      <a href="#contact">Contact</a>
+      <a onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">Portfolio</a>
+      <a onclick="document.getElementById('blog').scrollIntoView({behavior:'smooth'})">Blog</a>
+      <a onclick="document.getElementById('process').scrollIntoView({behavior:'smooth'})">Process</a>
     </div>
     <div>
       <h5>Contact</h5>
@@ -590,142 +425,7 @@
   </div>
 </footer>
 
-<!-- MODALS -->
-<div class="modal" id="projectModal">
-  <div class="modal-content">
-    <button class="modal-close" onclick="closeProjectModal()">✕</button>
-    <h2 class="modal-title" id="projectTitle"></h2>
-    <div id="projectDetails"></div>
-  </div>
-</div>
-
-<div class="modal" id="blogModal">
-  <div class="modal-content">
-    <button class="modal-close" onclick="closeBlogModal()">✕</button>
-    <div id="blogDetails"></div>
-  </div>
-</div>
-
 <script>
-  const projects = {
-    radai: {
-      title: 'RadAI - Medical Imaging Platform',
-      content: `
-        <div class="project-detail-image"></div>
-        <div class="project-detail-content">
-          <p>RadAI is an advanced AI platform designed for medical image analysis and diagnostics. Built with cutting-edge machine learning technology, it helps radiologists and healthcare providers make faster, more accurate diagnoses.</p>
-          <h3>The Challenge</h3>
-          <p>Medical imaging requires precise analysis and rapid turnaround. Traditional methods were slow and prone to human error. We needed to build a platform that could process thousands of medical images daily while maintaining accuracy.</p>
-          <h3>The Solution</h3>
-          <p>We developed a full-stack web application with an advanced AI backend. The platform integrates deep learning models trained on millions of medical images. The frontend provides an intuitive interface for radiologists to upload, analyze, and review images.</p>
-          <div class="project-details-list">
-            <div class="detail-item"><h4>Technologies</h4><p>Python, TensorFlow, React, Node.js</p></div>
-            <div class="detail-item"><h4>Timeline</h4><p>9 months</p></div>
-            <div class="detail-item"><h4>Team Size</h4><p>5 developers, 2 ML engineers</p></div>
-            <div class="detail-item"><h4>Result</h4><p>40% faster analysis, 99.2% accuracy</p></div>
-          </div>
-        </div>
-      `
-    },
-    ellys: {
-      title: 'Ellys Bakery - E-Commerce Platform',
-      content: `
-        <div class="project-detail-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
-        <div class="project-detail-content">
-          <p>An elegant e-commerce platform for an artisan bakery. Customers can browse fresh products, place orders online, and have them delivered to their doorstep.</p>
-          <h3>The Challenge</h3>
-          <p>Ellys needed to move their thriving bakery business online. They required a beautiful, easy-to-use platform that could showcase their products and handle orders efficiently.</p>
-          <h3>The Solution</h3>
-          <p>We built a custom e-commerce platform with a stunning product gallery, integrated payment processing, real-time order tracking, and an inventory management system for the bakery team.</p>
-          <div class="project-details-list">
-            <div class="detail-item"><h4>Technologies</h4><p>React, Node.js, Stripe, PostgreSQL</p></div>
-            <div class="detail-item"><h4>Timeline</h4><p>4 months</p></div>
-            <div class="detail-item"><h4>Team Size</h4><p>3 developers, 1 designer</p></div>
-            <div class="detail-item"><h4>Result</h4><p>2x monthly revenue increase</p></div>
-          </div>
-        </div>
-      `
-    },
-    whitematter: {
-      title: 'White Matter - Agency Website',
-      content: `
-        <div class="project-detail-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
-        <div class="project-detail-content">
-          <p>Our own digital agency website showcasing our work, services, and approach to building digital products. A beautiful, performant showcase of what we can do.</p>
-          <h3>The Challenge</h3>
-          <p>We needed to create a website that reflects our quality, creativity, and technical excellence. It had to be fast, beautiful, and demonstrate our capabilities.</p>
-          <h3>The Solution</h3>
-          <p>We built a modern website with smooth animations, responsive design, and integrated contact system. Every detail was carefully crafted to represent our brand values.</p>
-          <div class="project-details-list">
-            <div class="detail-item"><h4>Technologies</h4><p>HTML, CSS, JavaScript, Node.js</p></div>
-            <div class="detail-item"><h4>Timeline</h4><p>2 months</p></div>
-            <div class="detail-item"><h4>Team Size</h4><p>2 developers, 1 designer</p></div>
-            <div class="detail-item"><h4>Result</h4><p>30% increase in inquiries</p></div>
-          </div>
-        </div>
-      `
-    },
-    banking: {
-      title: 'Secure Banking Application',
-      content: `
-        <div class="project-detail-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
-        <div class="project-detail-content">
-          <p>A secure mobile banking application enabling users to manage their accounts, transfer money, and track transactions in real-time with enterprise-grade security.</p>
-          <h3>The Challenge</h3>
-          <p>Building a banking app requires the highest standards of security, reliability, and performance. We needed to create an app that users could trust with their finances.</p>
-          <h3>The Solution</h3>
-          <p>We developed a cross-platform mobile app with end-to-end encryption, biometric authentication, and real-time transaction updates. The backend uses microservices architecture for scalability.</p>
-          <div class="project-details-list">
-            <div class="detail-item"><h4>Technologies</h4><p>React Native, Node.js, AWS</p></div>
-            <div class="detail-item"><h4>Timeline</h4><p>6 months</p></div>
-            <div class="detail-item"><h4>Team Size</h4><p>4 developers, 1 security expert</p></div>
-            <div class="detail-item"><h4>Result</h4><p>50,000+ active users</p></div>
-          </div>
-        </div>
-      `
-    }
-  };
-
-  const blog = {
-    1: { title: 'The Future of AI in Web Development', content: `<h2 class="modal-title">The Future of AI in Web Development</h2><div class="blog-detail-content"><p><strong>June 5, 2025</strong> • 8 min read</p><p>Artificial intelligence is fundamentally changing how we build web applications. From automated code generation to intelligent design systems, AI is becoming an integral part of the development workflow.</p><h3>The Rise of AI-Powered Development Tools</h3><p>Tools like GitHub Copilot, ChatGPT, and Claude are making developers more productive than ever. These AI assistants can generate code snippets, write tests, and even debug errors. This doesn't replace developers—it augments them, allowing teams to move faster and focus on higher-level problem-solving.</p><h3>AI in Design and UX</h3><p>Machine learning algorithms are now capable of analyzing user behavior and suggesting design improvements. Personalization engines powered by AI can create unique experiences for each user, increasing engagement and conversion rates.</p><h3>The Road Ahead</h3><p>The future of web development will be shaped by AI. Developers who embrace these tools and understand how to work with AI systems will be at the forefront of innovation.</p></div>` },
-    2: { title: 'Flutter vs React Native in 2025', content: `<h2 class="modal-title">Flutter vs React Native in 2025</h2><div class="blog-detail-content"><p><strong>April 8, 2025</strong> • 4 min read</p><p>Both Flutter and React Native have matured significantly. Here's how they compare in 2025 and which might be better for your next project.</p><h3>Performance</h3><p>Flutter continues to demonstrate superior performance with 60+ fps animations. React Native has improved with the new architecture but still lags behind in complex animations.</p><h3>Developer Experience</h3><p>React Native's Expo makes getting started incredibly easy. Flutter's hot reload is equally impressive. Both have excellent documentation and large communities.</p><h3>Ecosystem</h3><p>React Native has a larger ecosystem of third-party libraries, while Flutter's first-party packages are more polished and well-maintained.</p></div>` },
-    3: { title: 'Django REST + Docker', content: `<h2 class="modal-title">Django REST + Docker: Best Practices</h2><div class="blog-detail-content"><p><strong>March 22, 2025</strong> • 3 min read</p><p>Containerizing Django applications with Docker ensures consistency across development, testing, and production environments. Here are the best practices we follow.</p><h3>The Perfect Dockerfile</h3><p>Use multi-stage builds to keep images small. Start with a Python base image, install dependencies, and copy your application code. Keep secrets out of the image.</p><h3>Docker Compose for Development</h3><p>Use Docker Compose to orchestrate your Django app, database, cache, and other services. This makes onboarding developers easy—just run 'docker-compose up'.</p></div>` },
-    4: { title: '5 Things Every Student Should Build', content: `<h2 class="modal-title">5 Things Every Student Should Build</h2><div class="blog-detail-content"><p><strong>March 15, 2025</strong> • 5 min read</p><p>Building the right projects can significantly improve your chances of landing a great development job. Here are 5 projects that will strengthen your portfolio and skills.</p><h3>1. A Todo App with Database</h3><p>Build a full-stack todo app with authentication. Use React/Vue for frontend, Node.js for backend, and PostgreSQL for database. This demonstrates CRUD operations and user authentication.</p><h3>2. A Weather App</h3><p>Integrate a weather API and build a responsive app. Demonstrates API integration, state management, and responsive design.</p><h3>3. A Blogging Platform</h3><p>Build a complete blogging platform. Shows you can build complex features like markdown editing, comments, and user profiles.</p></div>` }
-  };
-
-  function openProjectModal(id) {
-    const project = projects[id];
-    if (project) {
-      document.getElementById('projectTitle').textContent = project.title;
-      document.getElementById('projectDetails').innerHTML = project.content;
-      document.getElementById('projectModal').classList.add('open');
-    }
-  }
-
-  function closeProjectModal() {
-    document.getElementById('projectModal').classList.remove('open');
-  }
-
-  function openBlogModal(id) {
-    const article = blog[id];
-    if (article) {
-      document.getElementById('blogDetails').innerHTML = article.content;
-      document.getElementById('blogModal').classList.add('open');
-    }
-  }
-
-  function closeBlogModal() {
-    document.getElementById('blogModal').classList.remove('open');
-  }
-
-  function scrollToSection(sectionId) {
-    event.preventDefault();
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
   function submitForm(e) {
     e.preventDefault();
     const formData = {
@@ -762,13 +462,6 @@
       msgEl.classList.remove('success');
     });
   }
-
-  document.getElementById('projectModal').addEventListener('click', function(e) {
-    if (e.target === this) closeProjectModal();
-  });
-  document.getElementById('blogModal').addEventListener('click', function(e) {
-    if (e.target === this) closeBlogModal();
-  });
 </script>
 </body>
 </html>
